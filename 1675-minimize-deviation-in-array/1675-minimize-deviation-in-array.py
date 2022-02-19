@@ -18,18 +18,14 @@ class Solution:
         return num%2 != 0
     
     def minimumDeviation(self, nums: List[int]) -> int:
-        minEle, maxEle = 9999999999, -999999999
+        minEle, maxEle, ans = 9999999999, -999999999, 999999999
         
         for i in range(len(nums)):
             if self.isOdd(nums[i]):
                 nums[i] = nums[i] * 2
             if nums[i] < minEle:
                 minEle = nums[i]
-            if nums[i] > maxEle:
-                maxEle = nums[i]
             nums[i] = nums[i] * -1
-        
-        ans = maxEle - minEle
         
         heapq.heapify(nums)
     
