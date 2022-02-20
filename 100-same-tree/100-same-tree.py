@@ -6,17 +6,16 @@
 #         self.right = right
 class Solution:
     def inorder(self, root1, root2):
-        
         if root1 == None and root2 == None:
             return True
         
         if root1 == None or root2 == None:
             return False
         
-        left = self.inorder(root1.left, root2.left)
-        
         if root1.val != root2.val:
             return False
+        
+        left = self.inorder(root1.left, root2.left)
         
         right = self.inorder(root1.right, root2.right)
         
