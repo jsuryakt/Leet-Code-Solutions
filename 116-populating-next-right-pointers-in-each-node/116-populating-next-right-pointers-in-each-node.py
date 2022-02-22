@@ -17,16 +17,15 @@ class Solution:
         queue.append(root)
         while(queue):
             size = len(queue)
-            prev = None
-            # for ele in queue:
-            #     print(ele.val, end=" ")
-            # print()
+            # prev = None
             while(size > 0):
                 curr = queue.pop(0)
                 
                 if curr == None:
                     break
-                if queue:
+                if size == 1:
+                    curr.next = None
+                else:
                     curr.next = queue[0]
                 if curr.left != None:
                     queue.append(curr.left)
@@ -35,5 +34,5 @@ class Solution:
                 prev = curr        
                 size -= 1
                 
-            prev.next = None
+            # prev.next = None
         return root
