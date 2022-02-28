@@ -7,9 +7,7 @@ class Solution:
         chainEnd = nums[0]
         ans = []
         
-        while(i<len(nums)-1):
-            # while(nums[i] == nums[i+1]):
-            #     i += 1
+        for i in range(len(nums)-1):
             if nums[i]+1 == nums[i+1]:
                 chainEnd = nums[i+1]
             else:
@@ -19,7 +17,6 @@ class Solution:
                     ans.append(str(chainStart))
                 chainStart = nums[i+1]
                 chainEnd = nums[i+1]
-            i += 1
         if chainStart != chainEnd:
             ans.append(str(chainStart)+"->"+str(chainEnd))
         else:
