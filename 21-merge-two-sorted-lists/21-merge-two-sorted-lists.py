@@ -14,22 +14,21 @@ class Solution:
         while(ptr1 != None and ptr2 != None):
             # print(ptr1.val, ptr2.val, head.val)
             if ptr1.val <= ptr2.val:
-                node = ListNode(ptr1.val)
+                head.next = ptr1
                 ptr1 = ptr1.next
             else:
-                node = ListNode(ptr2.val)
+                head.next = ptr2
                 ptr2 = ptr2.next
-            head.next = node
             head = head.next
             
         while(ptr1 != None):
-            node = ListNode(ptr1.val)
-            head.next = node
+            # node = ListNode(ptr1.val)
+            head.next = ptr1
             head = head.next
             ptr1 = ptr1.next
         while(ptr2 != None):
-            node = ListNode(ptr2.val)
-            head.next = node
+            # node = ListNode(ptr2.val)
+            head.next = ptr2
             head = head.next
             ptr2 = ptr2.next
             
