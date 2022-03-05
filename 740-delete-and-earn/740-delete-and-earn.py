@@ -1,6 +1,6 @@
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
-        lengthOfFreq = max(nums)+1
+        lengthOfFreq = 10001
         freq = [0]*lengthOfFreq
         
         for ele in nums:
