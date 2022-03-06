@@ -11,6 +11,6 @@ class Solution:
         
         finalAns = self.factorial(order)%(10**9+7)
         for i in range(1, order+1):
-            finalAns = (finalAns * ((order-i)*2 + 2 - 1))%(10**9+7)
+            finalAns = (finalAns * (2*i - 1))%(10**9+7)
         return finalAns%(10**9+7)
             
