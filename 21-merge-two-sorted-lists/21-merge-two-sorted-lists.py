@@ -12,7 +12,6 @@ class Solution:
         ptr2 = list2
         
         while(ptr1 != None and ptr2 != None):
-            # print(ptr1.val, ptr2.val, head.val)
             if ptr1.val <= ptr2.val:
                 head.next = ptr1
                 ptr1 = ptr1.next
@@ -22,12 +21,10 @@ class Solution:
             head = head.next
             
         while(ptr1 != None):
-            # node = ListNode(ptr1.val)
             head.next = ptr1
             head = head.next
             ptr1 = ptr1.next
         while(ptr2 != None):
-            # node = ListNode(ptr2.val)
             head.next = ptr2
             head = head.next
             ptr2 = ptr2.next
