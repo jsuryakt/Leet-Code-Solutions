@@ -1,8 +1,5 @@
 class Solution:
-    def canJump(self, nums: List[int]) -> bool:
-        if len(nums) == 1:
-            return True
-        
+    def canJump(self, nums: List[int]) -> bool:   
         maxReach = 0
         
         for i in range(len(nums)-1):
@@ -10,6 +7,4 @@ class Solution:
             
             if maxReach == i:
                 return False
-        if maxReach >= len(nums)-1:
-            return True
-        return False
+        return True
