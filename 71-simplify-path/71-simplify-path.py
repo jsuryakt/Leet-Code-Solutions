@@ -3,7 +3,6 @@ class Solution:
         length = len(path)
         
         afterSplit = path.split('/')
-        print(afterSplit)
         top = -1
         stack = []
         
