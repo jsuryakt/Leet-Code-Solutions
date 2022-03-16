@@ -32,16 +32,11 @@ class Solution:
         tempLeft = left
         length = self.lengthOfList(head)
         
-        i = 1
-        while(head != None and i<left):
+        while(head != None and left>1):
             tempHead = head
             head = head.next
-            i += 1
+            left -= 1
         newHead, tail, oldTail = self.rotateK(head, k)
-        # print(tempHead.val)
-        # print(newHead.val)
-        # print(tail.val)
-        # print(oldTail.val)
         
         tail.next = oldTail
         if k == length or tempLeft == 1:
