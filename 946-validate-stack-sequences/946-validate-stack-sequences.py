@@ -5,7 +5,7 @@ class Solution:
         stack = []
         top = -1
         
-        while(True):
+        while(ptr1<len(pushed) or ptr2<len(pushed)):
             if ptr2<len(popped):
                 if top > -1 and stack[top] == popped[ptr2]:
                         stack.pop()
@@ -17,7 +17,7 @@ class Solution:
                         top += 1
                         ptr1 += 1
                     else:
-                        break
+                        return False
             else:
                 break
                 
