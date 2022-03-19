@@ -1,8 +1,6 @@
 from heapq import heappop, heappush, heapify
 
-class FreqStack:
-    
-    class Pair:
+class Pair:
         def __init__(self, val, ele, pos):
             self.val = val
             self.ele = ele
@@ -13,8 +11,7 @@ class FreqStack:
                 return self.pos > other.pos
             return self.val < other.val
         
-        def __str__(self):
-            return "{}-{},".format(-1 * self.val, self.ele)
+class FreqStack:
 
     def __init__(self):
         self.freqDic = {}
@@ -24,15 +21,12 @@ class FreqStack:
 
     def push(self, val: int) -> None:
         self.freqDic[val] = self.freqDic.get(val, 0) + 1
-        heappush(self.maxHeap, self.Pair(-1 * self.freqDic[val], val, self.idx))
+        heappush(self.maxHeap, Pair(-1 * self.freqDic[val], val, self.idx))
         self.idx += 1
         
 
     def pop(self) -> int:
-        # print(self.freqDic)
         heapTop = heappop(self.maxHeap)
         element, pos = heapTop.ele, heapTop.pos
-            
         self.freqDic[element] = self.freqDic[element]-1
-        
         return element
