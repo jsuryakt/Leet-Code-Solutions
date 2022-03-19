@@ -12,7 +12,6 @@ class Pair:
             return self.val < other.val
         
 class FreqStack:
-
     def __init__(self):
         self.freqDic = {}
         self.maxHeap = []
