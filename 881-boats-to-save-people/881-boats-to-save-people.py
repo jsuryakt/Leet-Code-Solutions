@@ -6,10 +6,7 @@ class Solution:
         r = len(people)-1
         boat = 0
         while(l<=r):
-            if l != r:
-                summ = people[l]+people[r]
-            else:
-                summ = people[l]
+            summ = people[l]+people[r]
             if summ <= limit:
                 l += 1
                 r -= 1
