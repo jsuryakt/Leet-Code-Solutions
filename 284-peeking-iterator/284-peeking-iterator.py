@@ -27,7 +27,7 @@ class PeekingIterator:
         :type iterator: Iterator
         """
         self.iterator = iterator
-        self.prev = self.iterator.next()
+        self.prev = iterator.next()
 
     def peek(self):
         """
