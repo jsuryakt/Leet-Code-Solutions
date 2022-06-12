@@ -10,12 +10,15 @@ class Solution {
                 max = Math.max(max, ans);
                 set.add(nums[r++]);
             } else {
-                while(l<r && set.contains(nums[r])) {
+                while(nums[r]!=nums[l]) {
                     ans -= nums[l];
                     set.remove(nums[l++]);
                 }
+                l++;
+                r++;
             }
         }
+        // 1 2 3 4 5 6 7 8 9 4 66 55
         return max;
     }
 }
