@@ -7,7 +7,7 @@ class Solution {
         int first = 0;
         int second = 1;
         int temp;
-        for(int i=0; i<=n-2; i++) {
+        for(int i=2; i<=n; i++) {
             temp = second;
             second = first+second;
             first = temp;
