@@ -11,7 +11,7 @@ class Solution {
     
     private int pathHelper(int maxMove, int i, int j, int[][][] memo) {
         if(maxMove < 0) return 0;
-        if(i<0 || j<0 || i>=m || j>=n) return 1;
+        if(i<0 || j<0 || i==m || j==n) return 1;
         if(memo[i][j][maxMove] >= 0) return memo[i][j][maxMove];
         
         int top = pathHelper(maxMove-1, i-1, j, memo);
