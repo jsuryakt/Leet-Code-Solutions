@@ -1,11 +1,12 @@
 class Solution {
     public int firstUniqChar(String s) {
         int[] charFreq = new int[26];
-        for(int i=0; i<s.length(); i++) {
+        int length = s.length();
+        for(int i=0; i<length; i++) {
             // 97 ascii for 'a'
             charFreq[s.charAt(i)-97]++;
         }
-        for(int i=0; i<s.length(); i++) {
+        for(int i=0; i<length; i++) {
             if(charFreq[s.charAt(i)-97] == 1) {
                 return i;
             }
