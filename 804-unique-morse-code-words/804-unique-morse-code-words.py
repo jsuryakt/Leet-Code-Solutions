@@ -1,13 +1,11 @@
 class Solution:
-    def getMorse(self, str):
-        map = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-        res = ""
-        for ele in str:
-            res += map[ord(ele)-97]
-        return res
-    
+ 
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        map = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
         sett = set()
         for word in words:
-            sett.add(self.getMorse(word))
+            res = ""
+            for ele in word:
+                res += map[ord(ele)-97]
+            sett.add(res)
         return len(sett)
