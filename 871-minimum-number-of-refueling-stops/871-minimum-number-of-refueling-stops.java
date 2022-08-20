@@ -14,7 +14,7 @@ class Solution {
             int stationFuel = station[1];
             
             while(currDistance<stationAt) {
-                if(fuelDump.size()==0) {
+                if(fuelDump.isEmpty()) {
                     return -1;
                 }
                 
@@ -25,7 +25,7 @@ class Solution {
             fuelDump.offer(stationFuel);
         }
         while(currDistance < target) {
-            if(fuelDump.size()==0) {
+            if(fuelDump.isEmpty()) {
                 return -1;
             }
             currDistance += fuelDump.poll();
