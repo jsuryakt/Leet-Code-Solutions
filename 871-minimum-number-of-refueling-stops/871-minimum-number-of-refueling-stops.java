@@ -22,7 +22,7 @@ class Solution {
                 stationCount++;
             }
             
-            fuelDump.add(stationFuel);
+            fuelDump.offer(stationFuel);
         }
         while(currDistance < target) {
             if(fuelDump.size()==0) {
