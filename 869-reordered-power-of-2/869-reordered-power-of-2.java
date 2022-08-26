@@ -11,13 +11,14 @@ class Solution {
         }
         int maxNum = Integer.parseInt(temp.toString());
         int pow = 1;
+        int i= 1;
         // O(n)*O(log n)
         while(pow<=maxNum) {
             int[] freq1 = getFreqArr(pow);
             if(compare2Freqs(freq1, intFreq)) {
                 return true;
             }
-            pow = pow*2;
+            pow = 1<<++i;
         }
         return false;
     }
