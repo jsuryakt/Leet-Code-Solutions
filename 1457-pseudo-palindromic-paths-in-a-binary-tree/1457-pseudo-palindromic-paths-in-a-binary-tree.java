@@ -1,26 +1,12 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
 class Solution {
     private int count=0;
     public int pseudoPalindromicPaths (TreeNode root) {
-        palindromeCheck(root,new HashMap<Integer,Integer>(),null);
+        palindromeCheck(root,new HashMap<Integer,Integer>());
         return count;
     }
-    public void palindromeCheck(TreeNode root,HashMap<Integer,Integer> map,TreeNode prev)
+    public void palindromeCheck(TreeNode root,HashMap<Integer,Integer> map)
     {
+        // left-mid-right
         if(root==null)
             return;
         
@@ -33,17 +19,19 @@ class Solution {
             for(Integer key:map.keySet())
             {
                 int value = map.get(key)%2;
-                // map.put(key, value);
                 sum+=value;
             }
             if(sum==0 || sum==1)
                 count++;
             return;
         }
-        palindromeCheck(root.left,map,root);
+        palindromeCheck(root.left,map);
+        
         if(root.left != null)
             map.put(root.left.val,map.get(root.left.val)-1);
-        palindromeCheck(root.right,map,root);
+        
+        palindromeCheck(root.right,map);
+        
         if(root.right!=null)
             map.put(root.right.val,map.get(root.right.val)-1);
     }
