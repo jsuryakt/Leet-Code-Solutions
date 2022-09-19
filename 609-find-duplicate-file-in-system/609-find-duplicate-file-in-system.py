@@ -17,7 +17,7 @@ class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
         dic = {}
         for str in paths:
-            dic = self.getFilesAndContent(str, dic)
+            self.getFilesAndContent(str, dic)
         ans = []
         for key in dic:
             lst = dic[key]
