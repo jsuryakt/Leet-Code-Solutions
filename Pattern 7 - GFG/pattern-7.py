@@ -3,16 +3,12 @@
 class Solution:
     def printTriangle(self, N):
         stars = 1
-# giv odd no only
-        total = N
-        for i in range(total):
-            spaces = (total*2)-stars
+        for i in range(N):
+            spaces = (N*2)-stars
             for _ in range(spaces//2):
                 print(" ", end="")
             for _ in range(stars):
                 print("*", end="")
-            for _ in range(spaces//2):
-                print(" ", end="")
             stars += 2
             print()
 
